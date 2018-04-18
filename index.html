@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TACOS Corpus</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <script src="assets/plugins/d3.js"></script>
+   </head>
+<body>
+    <!--  wrapper -->
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/data/images/logo1.png" alt="" />
+                </a>
+            </div>
+        </nav>
+        <!--  page-wrapper -->
+        <div id="page-wrapper">
+
+            <div class="row">
+                <!-- Welcome -->
+                <div class="col-lg-12">
+                    <div class="alert alert-info">
+                        <i class="fa fa-bar-chart-o" aria-hidden="true"></i><b>&nbsp;Hi! </b>And welcome to <b>Visualization Dashboard!</b>
+                    </div>
+                </div>
+                <!--end  Welcome -->
+            </div>
+
+            <div class="row">
+                <div class="col-lg-7">
+
+                    <!--Video Area -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h style="font-size: medium;font-style: oblique;"><b>Video Section</b></h>
+                            <!-- <div id="video-dropdown" class="pull-right"></div> -->
+
+                        </div>
+
+                        <div id="video-panel" class="panel-body">
+                              <div id="message"></div>
+                              <input type="file" accept="video/*"/>
+                              <video id='video' controls></video>
+                              <canvas id='video-overlay'></canvas>
+                              
+                            <div id="sel" class="selection-panel">
+                                <!-- Video Selection Area-->
+                                <div class="chat-panel panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h style="font-size: medium;font-style: oblique;"><b>Detected Frames</b></h>
+                                    </div>
+
+                                    <div class="panel-body" id="selection-panel-body">
+                                        <ul class="chat">
+                                            <li class="left clearfix">
+                                                <div class="pull-left col-lg-6 thumbnail-div">
+                                                    <img src="assets/data/images/sample%20Thumbnails/1.png" alt="Frame 1" class="img-responsive img-thumbnail" />
+                                                </div>
+                                                <div class="chat-body clearfix col-lg-6">
+                                                    <div class="header">
+                                                        <strong class="primary-font">What is the person doing?</strong>
+                                                        <small class=" text-muted">Approximation: <span style="color: blue"><b>90%</b></span></small>
+                                                    </div>
+                                                    <p style="text-align: justify; padding: 2px;">
+                                                        The man is <mark style="background-color: rgba(126, 220, 220, 0.72);"><b>Placing</b></mark> a <mark style="background-color: rgba(75, 0, 255, 0.22);"><b>Cutting Board</b></mark> on the <mark style="background-color: rgba(240, 79, 183, 0.32);"><b>Counter</b></mark>.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix">
+                                                <div class="pull-left col-lg-6 thumbnail-div">
+                                                    <img src="assets/data/images/sample%20Thumbnails/2.png" alt="Frame 1" class="img-responsive img-thumbnail" />
+                                                </div>
+                                                <div class="chat-body clearfix col-lg-6">
+                                                    <div class="header">
+                                                        <strong class="primary-font">What is the person doing?</strong>
+                                                        <small class=" text-muted">Approximation: <span style="color: blue"><b>84%</b></span></small>
+                                                    </div>
+                                                    <p style="text-align: justify; padding: 2px;">
+                                                        The man is <mark style="background-color: rgba(126, 220, 220, 0.72);"><b>Placing</b></mark> a <mark style="background-color: rgba(75, 0, 255, 0.22);"><b>Cucumber</b></mark> on the <mark style="background-color: rgba(240, 79, 183, 0.32);"><b>Cutting Board</b></mark>.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix">
+                                                <div class="pull-left col-lg-6 thumbnail-div">
+                                                    <img src="assets/data/images/sample%20Thumbnails/3.png" alt="Frame 1" class="img-responsive img-thumbnail" />
+                                                </div>
+                                                <div class="chat-body clearfix col-lg-6">
+                                                    <div class="header">
+                                                        <strong class="primary-font">What is the person doing?</strong>
+                                                        <small class=" text-muted">Approximation: <span style="color: blue"><b>87%</b></span></small>
+                                                    </div>
+                                                    <p style="text-align: justify; padding: 2px;">
+                                                        The man <mark style="background-color: rgba(126, 220, 220, 0.72);"><b>Removed</b></mark> a <mark style="background-color: rgba(75, 0, 255, 0.22);"><b>Cucumber</b></mark> from the <mark style="background-color: rgba(240, 79, 183, 0.32);"><b>Refrigerator</b></mark>.
+                                                    </p>
+                                                </div>
+                                            </li>
+
+                                            <li class="left clearfix">
+                                                <div class="pull-left col-lg-6 thumbnail-div">
+                                                    <img src="assets/data/images/sample%20Thumbnails/4.png" alt="Frame 1" class="img-responsive img-thumbnail" />
+                                                </div>
+                                                <div class="chat-body clearfix col-lg-6">
+                                                    <div class="header">
+                                                        <strong class="primary-font">What is the person doing?</strong>
+                                                        <small class=" text-muted">Approximation: <span style="color: blue"><b>70%</b></span></small>
+                                                    </div>
+                                                    <p style="text-align: justify; padding: 2px;">
+                                                        The man is <mark style="background-color: rgba(126, 220, 220, 0.72);"><b>Washing</b></mark> a <mark style="background-color: rgba(75, 0, 255, 0.22);"><b>Cucumber</b></mark> in the <mark style="background-color: rgba(240, 79, 183, 0.32);"><b>Sink</b></mark>.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix" id="selected-image">
+                                                <div class="pull-left col-lg-6 thumbnail-div">
+                                                    <img src="assets/data/images/sample%20Thumbnails/5.png" alt="Frame 1" class="img-responsive img-thumbnail" />
+                                                </div>
+                                                <div class="chat-body clearfix col-lg-6">
+                                                    <div class="header">
+                                                        <strong class="primary-font">What is the person doing?</strong>
+                                                        <small class=" text-muted">Approximation: <span style="color: blue"><b>83%</b></span></small>
+                                                    </div>
+                                                    <p style="text-align: justify; padding: 2px;">
+                                                        The man <mark style="background-color: rgba(126, 220, 220, 0.72);"><b>Placed</b></mark> a <mark style="background-color: rgba(75, 0, 255, 0.22);"><b>Cucumber</b></mark> on the <mark style="background-color: rgba(240, 79, 183, 0.32);"><b>Cutting Board</b></mark>.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix">
+                                                <div class="pull-left col-lg-6 thumbnail-div">
+                                                    <img src="assets/data/images/sample%20Thumbnails/6.png" alt="Frame 1" class="img-responsive img-thumbnail" />
+                                                </div>
+                                                <div class="chat-body clearfix col-lg-6">
+                                                    <div class="header">
+                                                        <strong class="primary-font">What is the person doing?</strong>
+                                                        <small class=" text-muted">Approximation: <span style="color: blue"><b>92%</b></span></small>
+                                                    </div>
+                                                    <p style="text-align: justify; padding: 2px;">
+                                                        The man is <mark style="background-color: rgba(126, 220, 220, 0.72);"><b>Cutting</b></mark> a <mark style="background-color: rgba(75, 0, 255, 0.22);"><b>Cucumber</b></mark> on the <mark style="background-color: rgba(240, 79, 183, 0.32);"><b>Counter</b></mark>.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="left clearfix">
+                                                <div class="pull-left col-lg-6 thumbnail-div" >
+                                                    <img src="assets/data/images/sample%20Thumbnails/7.png" alt="Frame 1" class="img-responsive img-thumbnail" />
+                                                </div>
+                                                <div class="chat-body clearfix col-lg-6">
+                                                    <div class="header">
+                                                        <strong class="primary-font">What is the person doing?</strong>
+                                                        <small class=" text-muted">Approximation: <span style="color: blue"><b>79%</b></span></small>
+                                                    </div>
+                                                    <p style="text-align: justify; padding: 2px;">
+                                                        The man <mark style="background-color: rgba(126, 220, 220, 0.72);"><b>Placed</b></mark> an <mark style="background-color: rgba(75, 0, 255, 0.22);"><b>Avocado</b></mark> on a <mark style="background-color: rgba(240, 79, 183, 0.32);"><b>Plate</b></mark>.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                </div>
+                                <!--End Video Selection Area-->
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--End Video Area -->
+
+                </div>
+                <div class="col-lg-5">
+
+                    <!-- Explanation Panel-->
+                    <div class="panel panel-primary" id="explanation-box">
+                        <div class="panel-heading">
+                            <h style="font-size: medium;font-style: oblique;"><b>Other Explanations For Selected Frame</b></h>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="list-group" id="list">
+                                <strong style="font-size: medium"><b>What is the person doing?</b></strong>
+                                <small class="pull-right" style="vertical-align: bottom"><b>Approximation</b></small>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Explanation Panel-->
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h style="font-size: medium;font-style: oblique;"><b>Effects of Words for Generating the Selected Guess for the Given Frame</b></h>
+                        </div>
+
+                        <div class="panel-body" style="height: 214px;">
+                            <div class="list-group" id="chart-div">
+                                <strong style="font-size: medium">Selected statement: <b>The man is holding a cucumber on the counter.</b></strong>
+                                <small class="pull-right" style="vertical-align: bottom">Approximation: <b>59%</b></small>
+                                <div class="col-md-4" style="background-color: #428bca;text-align: center;color: white;"><b>Actions</b></div>
+                                <div class="col-md-4" style="background-color: rgba(66, 139, 202, 0.59);text-align: center;border-radius: 1px;color: white;"><b>Objects</b></div>
+                                <div class="col-md-4" style="background-color: #428bca;text-align: center;color: white;"><b>Locations</b></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h><b>Ask a question below and the model will provide a best guessed answer!</b></h>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Is the person going to eat cucumber?">
+                      <span class="input-group-btn">
+                        <button class="btn btn-success" type="button">Submit Question</button>
+                      </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page-wrapper -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <script src="assets/scripts/heatmap.js"></script>
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/d3.min.js"></script>
+    <script src="assets/scripts/Explanation.js"></script>
+    <script src="assets/scripts/Video.js"></script>
+    <script type="text/javascript" src="assets/data/Video.json"></script>
+
+<script>
+//To load video file from directory
+
+(function localFileVideoPlayer() {
+    'use strict'
+  var URL = window.URL || window.webkitURL
+  var displayMessage = function (message, isError) {
+    var element = document.querySelector('#message')
+    element.innerHTML = message
+    element.className = isError ? 'error' : 'info'
+  }
+  var playSelectedFile = function (event) {
+    var file = this.files[0]
+    var type = file.type
+    var videoNode = document.querySelector('video')
+    var canPlay = videoNode.canPlayType(type)
+    if (canPlay === '') canPlay = 'no'
+    var message = 'Can play type "' + type + '": ' + canPlay
+    var isError = canPlay === 'no'
+    displayMessage(message, isError)
+
+    if (isError) {
+      return
+    }
+
+    var fileURL = URL.createObjectURL(file)
+    videoNode.src = fileURL
+    console.log(file.name)
+    // function ExplanationFromfile(data){   
+      loadData(file.name); 
+    // }
+    // d3.json('assets/data/Video.json', ExplanationFromfile);
+  }
+  var inputNode = document.querySelector('input')
+  inputNode.addEventListener('change', playSelectedFile, false)
+
+})()
+</script>
+
+
+</body>
+
+</html>
