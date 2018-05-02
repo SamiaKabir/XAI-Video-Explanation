@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TACOS Corpus</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <script src="assets/plugins/d3.js"></script>
+   </head>
+<body>
+    <!--  wrapper -->
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/data/images/logo1.png" alt="" />
+                </a>
+            </div>
+
+            <div>
+                <a class="navbar-brand" href="no.html" style="float:right;">
+                    <img src="assets/data/images/logo2.png" alt="" />
+                </a>
+            </div>
+
+        </nav>
+        <!--  page-wrapper -->
+        <div id="page-wrapper">
+
+            <div class="row">
+                <!-- Welcome -->
+                <div class="col-lg-12">
+                    <div class="alert alert-info">
+                        <i class="fa fa-bar-chart-o" aria-hidden="true"></i><b>&nbsp;Hi! </b>And welcome to <b>Visualization Dashboard!</b>
+                    </div>
+                </div>
+                <!--end  Welcome -->
+            </div>
+
+            <div class="row">
+                <div class="col-lg-7">
+
+                    <!--Video Area -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h style="font-size: medium;font-style: oblique;"><b>Video Section</b></h>
+                            <!-- <div id="video-dropdown" class="pull-right"></div> -->
+
+                        </div>
+
+                        <div id="video-panel" class="panel-body">
+                              <div id="message"></div>
+                              <input type="file" id="video_selector" accept="video/*"/>
+                              <video id='video' controls></video>
+                              <canvas id='video-overlay'></canvas>
+                              
+                            <div id="sel" class="selection-panel">
+                                <!-- Video Selection Area-->
+                                <!-- question -->
+                                <div class="chat-panel panel panel-primary" style="height:300px;">
+                                    <div class="panel-heading">
+                                        <h style="font-size: medium;font-style: oblique;"><b>Question</b></h>
+                                    </div>                                
+                                <div >
+                                   <div >
+                                     <h><b>Ask a question below and the model will provide a best guessed answer!</b></h>
+                                      <div class="input-group" style="width:100%">
+                                        <select id="mySelect" size="1"> </select>
+                                        <br> <br>
+                                        <!-- <span class="input-group-btn"> -->
+                                           <button class="btn btn-success" id="button1" type="button" style="margin-left:25%;">Submit Question</button>
+                                        <!-- </span> -->
+                                      </div>
+                                    </div>
+                               </div>
+                           </div>
+
+                           <!-- answer -->
+                                <div class="chat-panel panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h style="font-size: medium;font-style: oblique;"><b>Machine Generated Answer</b></h>
+                                    </div>
+
+                             <!-- To show the answer of the questions being asked -->
+                                   <div id="answer">
+
+                                   </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--End Video Area -->
+
+                </div>
+ 
+            </div>
+<!--             <div class="row">
+                <div class="col-lg-6">
+                    <h><b>Ask a question below and the model will provide a best guessed answer!</b></h>
+                    <div class="input-group">
+                         <select id="mySelect" size="1"> </select>
+
+                      <span class="input-group-btn">
+                        <button class="btn btn-success" id="button1" type="button">Submit Question</button>
+                      </span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- end page-wrapper -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <!-- <script src="assets/scripts/heatmap.js"></script> -->
+    <script src="assets/scripts/load_video_no.js"></script>
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/d3.min.js"></script>
+    <script src="assets/scripts/Explanation.js"></script>
+    <script src="assets/scripts/Video.js"></script>
+    <script type="text/javascript" src="assets/data/Video.json"></script>
+
+<!-- <script>
+
+
+</script> -->
+
+
+</body>
+
+</html>

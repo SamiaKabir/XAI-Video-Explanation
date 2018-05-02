@@ -405,6 +405,7 @@ div#selection-panel-body {
     text-align: justify;
     padding: 2px;
     vertical-align: baseline;
+    font-size: 16px;
 }
 
 .panel-body {
@@ -418,4 +419,26 @@ div#selection-panel-body {
 .alert{
     margin-bottom: 20px;
     margin-top: 41px;
+}
+
+
+#mySelect{
+width: 90%;
+height:35px;
+font-size: 20px;
+margin-left: 3%;
+}
+
+#video_selector{
+
+}
+
+#answer{
+
+    height: 80px;
+    font-size:38px;
+    margin-left:35%;
+    margin-top:3%;
+    font-style: bold;
+    color:"#000066";
 }
