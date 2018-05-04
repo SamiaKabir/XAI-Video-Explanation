@@ -40,14 +40,14 @@
 
 					"associatedFeatures" : {
 						"listOfAllDetectedObject": [
-							{"name":"hand", "probabilty": 0.999604},
-							{"name":"cutting-board", "probabilty": 0.93704}
+							{"name":"hand", "probability": 0.999604},
+							{"name":"cutting-board", "probability": 0.93704}
 						],
 						"listOfAllDetectedLocation": [
-							{"name":"drawer-counter", "probabilty": 0.753228}
+							{"name":"drawer-counter", "probability": 0.753228}
 						],
 						"listOfAllDetectedAction": [
-							{"name":"take out", "probabilty": 0.93704}
+							{"name":"take out", "probability": 0.93704}
 						]
 					}	
 					
@@ -80,10 +80,10 @@
 					],
 				   "associatedFeatures" : {
 						"listOfAllDetectedObject": [
-							{"name":"hand", "probabilty": 0.966789}
+							{"name":"hand", "probability": 0.966789}
 						],
 						"listOfAllDetectedAction": [
-							{"name":"peel", "probabilty": 0.583477}
+							{"name":"peel", "probability": 0.583477}
 						]
 					}	
 				}
@@ -127,12 +127,13 @@
 
 					"associatedFeatures" : {
 						"listOfAllDetectedObject": [
-							{"name":"hand", "probabilty": 0.999912},
-							{"name":"carrot", "probabilty": 0.999999}
+							{"name":"hand", "probability": 0.999912},
+							{"name":"carrot", "probability": 0.999999}
 						],
 						"listOfAllDetectedAction": [
-							{"name":"wash", "probabilty": 0.999274}
-						]
+							{"name":"wash", "probability": 0.999274}
+						],
+						"listOfAllDetectedLocation": []
 					}	
 				}
 
@@ -168,13 +169,14 @@
 					],
 					"associatedFeatures" : {
 						"listOfAllDetectedObject": [
-							{"name":"carrot", "probabilty": 0.99995},
-							{"name":"knife", "probabilty": 1},
-							{"name":"cutting-board", "probabilty": 1}
+							{"name":"carrot", "probability": 0.99995},
+							{"name":"knife", "probability": 1},
+							{"name":"cutting-board", "probability": 1}
 						],
 						"listOfAllDetectedAction": [
-							{"name":"cut apart", "probabilty": 0.99985}
-						]
+							{"name":"cut apart", "probability": 0.99985}
+						],
+						"listOfAllDetectedLocation": []
 					}	
 				}
 

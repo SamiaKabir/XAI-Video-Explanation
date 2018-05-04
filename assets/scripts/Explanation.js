@@ -8,29 +8,26 @@ function createString (explanation) {
         + explanation.location + "</b></mark>."
         + "<span class=\"pull-right text-muted medium\"><em> <b>"
         + explanation.accuracy*100 + "%</b></em></span>";
-    console.log (string);
+    // console.log (string);
     return string;
 }
 
 // To load explanation data from json files
-function loadData(data)
+function loadData(explanationsData, associationData)
 {
-     console.log(data);
+    console.log(explanationsData);
+    console.log(associationData);
 
-      
-    for (var j = 0; j <data.length; j++) {
-             loadExplanation(data)
-        }
-
+    for (var j = 0; j <explanationsData.length; j++) {
+        loadExplanation(explanationsData)
+    }
+    loadCharts(associationData);
 
 }
 
 //to show explanations in panel 2
 
 function loadExplanation (data) {
-
-
-
 
     listItems = d3.select("#list").selectAll("a")
     .data(data).enter();

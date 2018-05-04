@@ -257,173 +257,173 @@ var barWidth = 242,
 //         return d.name;
 //     })
 //1
-
-var yScale = d3.scale.linear()
-    .domain([0, 100])
-    .range([0, 150]);
-
-var xScale = d3.scale.ordinal()
-    .domain(d3.range(0, bardata.length))
-    .rangeBands([1, 211]);
-
-var div1 = d3.select('#chart-div')
-            .append('div')
-            .classed('col-md-4 chart-div', true)
-            .style('background-color', 'white')
-            .style('height','150px');
-
-div1.append('svg')
-    .attr('width', '100%')
-    .attr('height', '150px')
-    .attr('id','chart1')
-    .style({
-        'background-color':'rgba(66, 139, 202, 0.28)',
-        // 'margin-top':'10px',
-        'margin-bottom':'-4px'
-    })
-    .selectAll('rect').data(bardata)
-    .enter().append('rect')
-    .style('fill', function (d) {
-        return d.color;
-    })
-    .attr('width', xScale.rangeBand())
-    .attr('height', function(d) {
-        return yScale(d.prob);
-    })
-    .attr('x', function(d,i) {
-        return xScale(i);
-    })
-    .attr('y', function(d) {
-        return 150 - yScale(d.prob);
-    })
-    .attr('rx',5)
-    .attr('ry',5)
-    .style({
-        'stroke':'black',
-        'stroke-width':'1px'
-    });
-
-d3.select('#chart1')
-    .selectAll('text').data(bardata)
-    .enter().append('text')
-    .attr('x', function (d,i) {
-        return xScale(i)+1;
-    })
-    .attr('y', function (d) {
-        return 145 - yScale(d.prob);
-    })
-    .text(function (d) {
-        return d.text + ': ' + d.prob + ' %';
-
-    })
-    .style({
-        'font-size':'x-small'
-    });
-
-var div2 = d3.select('#chart-div')
-    .append('div')
-    .classed('col-md-4 chart-div', true)
-    .style('background-color', 'white')
-    .style('height','150px');
-
-div2.append('svg')
-    .attr('width', '100%')
-    .attr('height', '150px')
-    .attr('id','chart2')
-    .style({
-        'background-color':'rgba(66, 139, 202, 0.28)',
-        // 'margin-top':'10px',
-        'margin-bottom':'-4px'
-    })
-    .selectAll('rect').data(bardata2)
-    .enter().append('rect')
-    .style('fill', function (d) {
-        return d.color;
-    })
-    .attr('width', xScale.rangeBand())
-    .attr('height', function(d) {
-        return yScale(d.prob);
-    })
-    .attr('x', function(d,i) {
-        return xScale(i);
-    })
-    .attr('y', function(d) {
-        return 150 - yScale(d.prob);
-    })
-    .attr('rx',5)
-    .attr('ry',5)
-    .style({
-        'stroke':'black',
-        'stroke-width':'1px'
-    });
-
-d3.select('#chart2')
-    .selectAll('text').data(bardata2)
-    .enter().append('text')
-    .attr('x', function (d,i) {
-        return xScale(i)+1;
-    })
-    .attr('y', function (d) {
-        return 145 - yScale(d.prob);
-    })
-    .text(function (d) {
-        return d.text + ': ' + d.prob + ' %';
-
-    })
-    .style({
-        'font-size':'x-small'
-    });
-
-var div3 = d3.select('#chart-div')
-    .append('div')
-    .classed('col-sm-4 chart-div', true)
-    .style('background-color', 'white')
-    .style('height','150px');
-
-div3.append('svg')
-    .attr('width', '100%')
-    .attr('height', '150px')
-    .attr('id','chart3')
-    .style({
-        'background-color':'rgba(66, 139, 202, 0.28)',
-        // 'margin-top':'10px',
-        'margin-bottom':'-4px'
-    })
-    .selectAll('rect').data(bardata3)
-    .enter().append('rect')
-    .style('fill', function (d) {
-        return d.color;
-    })
-    .attr('width', xScale.rangeBand())
-    .attr('height', function(d) {
-        return yScale(d.prob);
-    })
-    .attr('x', function(d,i) {
-        return xScale(i);
-    })
-    .attr('y', function(d) {
-        return 150 - yScale(d.prob);
-    })
-    .attr('rx',5)
-    .attr('ry',5)
-    .style({
-        'stroke':'black',
-        'stroke-width':'1px'
-    });
-
-d3.select('#chart3')
-    .selectAll('text').data(bardata3)
-    .enter().append('text')
-    .attr('x', function (d,i) {
-        return xScale(i)+1;
-    })
-    .attr('y', function (d) {
-        return 145 - yScale(d.prob);
-    })
-    .text(function (d) {
-        return d.text + ': ' + d.prob + ' %';
-
-    })
-    .style({
-        'font-size':'x-small'
-    });
+//
+// var yScale = d3.scale.linear()
+//     .domain([0, 100])
+//     .range([0, 150]);
+//
+// var xScale = d3.scale.ordinal()
+//     .domain(d3.range(0, bardata.length))
+//     .rangeBands([1, 211]);
+//
+// var div1 = d3.select('#chart-div')
+//             .append('div')
+//             .classed('col-md-4 chart-div', true)
+//             .style('background-color', 'white')
+//             .style('height','150px');
+//
+// div1.append('svg')
+//     .attr('width', '100%')
+//     .attr('height', '150px')
+//     .attr('id','chart1')
+//     .style({
+//         'background-color':'rgba(66, 139, 202, 0.28)',
+//         // 'margin-top':'10px',
+//         'margin-bottom':'-4px'
+//     })
+//     .selectAll('rect').data(bardata)
+//     .enter().append('rect')
+//     .style('fill', function (d) {
+//         return d.color;
+//     })
+//     .attr('width', xScale.rangeBand())
+//     .attr('height', function(d) {
+//         return yScale(d.prob);
+//     })
+//     .attr('x', function(d,i) {
+//         return xScale(i);
+//     })
+//     .attr('y', function(d) {
+//         return 150 - yScale(d.prob);
+//     })
+//     .attr('rx',5)
+//     .attr('ry',5)
+//     .style({
+//         'stroke':'black',
+//         'stroke-width':'1px'
+//     });
+//
+// d3.select('#chart1')
+//     .selectAll('text').data(bardata)
+//     .enter().append('text')
+//     .attr('x', function (d,i) {
+//         return xScale(i)+1;
+//     })
+//     .attr('y', function (d) {
+//         return 145 - yScale(d.prob);
+//     })
+//     .text(function (d) {
+//         return d.text + ': ' + d.prob + ' %';
+//
+//     })
+//     .style({
+//         'font-size':'x-small'
+//     });
+//
+// var div2 = d3.select('#chart-div')
+//     .append('div')
+//     .classed('col-md-4 chart-div', true)
+//     .style('background-color', 'white')
+//     .style('height','150px');
+//
+// div2.append('svg')
+//     .attr('width', '100%')
+//     .attr('height', '150px')
+//     .attr('id','chart2')
+//     .style({
+//         'background-color':'rgba(66, 139, 202, 0.28)',
+//         // 'margin-top':'10px',
+//         'margin-bottom':'-4px'
+//     })
+//     .selectAll('rect').data(bardata2)
+//     .enter().append('rect')
+//     .style('fill', function (d) {
+//         return d.color;
+//     })
+//     .attr('width', xScale.rangeBand())
+//     .attr('height', function(d) {
+//         return yScale(d.prob);
+//     })
+//     .attr('x', function(d,i) {
+//         return xScale(i);
+//     })
+//     .attr('y', function(d) {
+//         return 150 - yScale(d.prob);
+//     })
+//     .attr('rx',5)
+//     .attr('ry',5)
+//     .style({
+//         'stroke':'black',
+//         'stroke-width':'1px'
+//     });
+//
+// d3.select('#chart2')
+//     .selectAll('text').data(bardata2)
+//     .enter().append('text')
+//     .attr('x', function (d,i) {
+//         return xScale(i)+1;
+//     })
+//     .attr('y', function (d) {
+//         return 145 - yScale(d.prob);
+//     })
+//     .text(function (d) {
+//         return d.text + ': ' + d.prob + ' %';
+//
+//     })
+//     .style({
+//         'font-size':'x-small'
+//     });
+//
+// var div3 = d3.select('#chart-div')
+//     .append('div')
+//     .classed('col-sm-4 chart-div', true)
+//     .style('background-color', 'white')
+//     .style('height','150px');
+//
+// div3.append('svg')
+//     .attr('width', '100%')
+//     .attr('height', '150px')
+//     .attr('id','chart3')
+//     .style({
+//         'background-color':'rgba(66, 139, 202, 0.28)',
+//         // 'margin-top':'10px',
+//         'margin-bottom':'-4px'
+//     })
+//     .selectAll('rect').data(bardata3)
+//     .enter().append('rect')
+//     .style('fill', function (d) {
+//         return d.color;
+//     })
+//     .attr('width', xScale.rangeBand())
+//     .attr('height', function(d) {
+//         return yScale(d.prob);
+//     })
+//     .attr('x', function(d,i) {
+//         return xScale(i);
+//     })
+//     .attr('y', function(d) {
+//         return 150 - yScale(d.prob);
+//     })
+//     .attr('rx',5)
+//     .attr('ry',5)
+//     .style({
+//         'stroke':'black',
+//         'stroke-width':'1px'
+//     });
+//
+// d3.select('#chart3')
+//     .selectAll('text').data(bardata3)
+//     .enter().append('text')
+//     .attr('x', function (d,i) {
+//         return xScale(i)+1;
+//     })
+//     .attr('y', function (d) {
+//         return 145 - yScale(d.prob);
+//     })
+//     .text(function (d) {
+//         return d.text + ': ' + d.prob + ' %';
+//
+//     })
+//     .style({
+//         'font-size':'x-small'
+//     });

@@ -40,92 +40,84 @@
 //to load the video specific data,questions and answers
 
 function load_question(vid){
-var x = document.getElementById("mySelect");
-var time=[];
-var explanations=[];
-var flag=0;
+    var x = document.getElementById("mySelect");
+    var time=[];
+    var explanations=[];
+    var associations = [];
+    var flag=0;
+    var button= d3.select("#button1");
 
-var button= d3.select("#button1");
-button.on("click",function(d){
+    // CLICK TO SEE THE RESULTS OF THE QUESTIONS AS WELL AS THE EXPLANATIONS
+    button.on("click",function(d){
 
-var x = document.getElementById("mySelect");
-var div= document.getElementById("answer");
-console.log(x.options[x.selectedIndex].value);
-div.innerHTML=x.options[x.selectedIndex].value;
-change_video_time(time[x.selectedIndex]);
+        var x = document.getElementById("mySelect");
+        var div= document.getElementById("answer");
+        console.log(x.options[x.selectedIndex].value);
+        div.innerHTML=x.options[x.selectedIndex].value;
+        change_video_time(time[x.selectedIndex]);
 
-//to clear the previous list if any
-if(flag>0)
-{
-clear_list(flag);
-loadData(explanations[x.selectedIndex]);
-}
-else{
-loadData(explanations[x.selectedIndex]);
-}
-flag++;
+        //to clear the previous list if any
+        if(flag>0) {
+            clear_list(flag);
+            loadData(explanations[x.selectedIndex], associations[x.selectedIndex]);
 
-});
+        }
+        else {
+            loadData(explanations[x.selectedIndex], associations[x.selectedIndex]);
+        }
+        flag++;
+    });
 
+    var questions;
 
-var questions;
+    var file='assets/data/video_new.json';
 
+    //FILLING EXPLANATIONS AND ASSOCIATIONS FOR ALL THE QUESTIONS RELATED TO THIS VIDEO
+    d3.json(file, function(data){
+      for(var i=0;i<data.length;i++)
+      {
+        if(data[i].videoName==vid)
+        {
+           var len=data[i].listOfQuestions.length;
 
-var file='assets/data/video_new.json';
-
-d3.json(file, function(data){
-
-
-  console.log(data)
-  console.log(vid)
-
-  
-
-  for(var i=0;i<data.length;i++)
-  {
-    if(data[i].videoName==vid)
-    {
-       var len=data[i].listOfQuestions.length;
-
-       for(var j=0;j<len;j++)
-       {
-
-           var question=data[i].listOfQuestions[j].questionText;
-           var value=data[i].listOfQuestions[j].computerAnswer;
-           console.log(question)
-           console.log(value)
-           // select.options.add( new Option(question,value) );
-
-           var option = document.createElement("option");
-           option.text = question;
-           option.value=value;
-           x.add(option);
-           time[j]=data[i].listOfQuestions[j].listOfKeyFrames.startTime;
-           
-           var len2=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations.length;
-           console.log(len2)
-           var temp2=[];
-           for(var k=0; k<len2;k++)
+           for(var j=0;j<len;j++)
            {
-             var temp={}
+               var currentQuestion=data[i].listOfQuestions[j];
+               var option = document.createElement("option");
 
-             temp.action=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].activity;
-             temp.object=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].object;
-             temp.location=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].location;
-             temp.accuracy=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].approximation;
+               option.text = currentQuestion.questionText;
+               option.value= currentQuestion.computerAnswer;
+               x.add(option);
 
-             temp2.push(temp);
-           }
+               time[j]=currentQuestion.listOfKeyFrames.startTime;
 
-           explanations.push(temp2);
+               var len2=currentQuestion.listOfKeyFrames.textExplanations.length;
+               var temp2=[];
+               var listOfProbabilities = [];
+               for(var k=0; k<len2;k++)
+               {
+                 var temp={};
 
+                 // explanations data
+                 temp.action=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].activity;
+                 temp.object=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].object;
+                 temp.location=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].location;
+                 temp.accuracy=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].approximation;
+
+                 temp2.push(temp);
+
+               }
+
+               explanations.push(temp2);
+               associations.push(currentQuestion.listOfKeyFrames.associatedFeatures);
+          }
+        }
       }
-    }
-  }
+      console.log ("Heloo ***********");
+      console.log (associations);
+      console.log(explanations)
 
-  console.log(explanations)
-
-});
+    });
 }
 
 function change_video_time(time)

@@ -23,7 +23,7 @@ limitations under the License.*/
 
  body {
     background-color: #f8f8f8;
-     overflow-y: hidden;
+     /*overflow-y: hidden;*/
      height: 100%;
 }
 
@@ -441,4 +441,8 @@ margin-left: 3%;
     margin-top:3%;
     font-style: bold;
     color:"#000066";
+}
+
+.svg-style {
+    background-color: rgba(66, 139, 202, 0.28);
 }
