@@ -1,14 +1,37 @@
 
+
 var listItems;
+var listItems1;
+var listItems2;
+var listItems3;
+
 function createString (explanation) {
-    var string =  "<span class=\"fa fa-chevron-right\" aria-hidden=\"true\"></span>"
-        + "Activity:  <mark style=\"background-color: rgba(126, 220, 220, 0.72);\"><b>"
-        + explanation.action + "</b></mark> ;  Object:  <mark style=\"background-color: rgba(75, 0, 255, 0.22);\"><b>"
-        + explanation.object + "</b></mark> ; Location:  <mark style=\"background-color: rgba(240, 79, 183, 0.32);\"><b>"
-        + explanation.location + "</b></mark>."
-        + "<span class=\"pull-right text-muted medium\"><em> <b>"
-        + explanation.accuracy*100 + "%</b></em></span>";
-    // console.log (string);
+    var string = "<mark style=\"background-color: rgba(126, 220, 220, 0.72);\"><b>"
+        + explanation.action;
+
+    console.log (string);
+    return string;
+}
+
+function createString1 (explanation) {
+    var string = "<mark style=\"background-color: rgba(75, 0, 255, 0.22);\"><b>"
+        + explanation.object;
+    console.log (string);
+    return string;
+}
+
+
+function createString2 (explanation) {
+    var string = "<mark style=\"background-color: rgba(240, 79, 183, 0.32);\"><b>"
+         + explanation.location;
+    console.log (string);
+    return string;
+}
+
+
+function createString3 (explanation) {
+    var string =  explanation.accuracy*100 +"%";
+    console.log (string);
     return string;
 }
 
@@ -29,7 +52,17 @@ function loadData(explanationsData, associationData)
 
 function loadExplanation (data) {
 
+ 
     listItems = d3.select("#list").selectAll("a")
+    .data(data).enter();
+
+    listItems1 = d3.select("#list1").selectAll("a")
+    .data(data).enter();
+
+    listItems2 = d3.select("#list2").selectAll("a")
+    .data(data).enter();
+
+    listItems3 = d3.select("#list3").selectAll("a")
     .data(data).enter();
 
     console.log("here");
@@ -40,6 +73,31 @@ function loadExplanation (data) {
         .classed("explanation-options", true)
             .html(function(d) {
                 return createString(d);
+    });
+
+    listItems1.append("a")
+        .classed("list-group-item", true)
+        .append("p")
+        .classed("explanation-options", true)
+            .html(function(d) {
+                return createString1(d);
+    });
+
+
+    listItems2.append("a")
+        .classed("list-group-item", true)
+        .append("p")
+        .classed("explanation-options", true)
+            .html(function(d) {
+                return createString2(d);
+    });
+
+    listItems3.append("a")
+        .classed("list-group-item", true)
+        .append("p")
+        .classed("explanation-options", true)
+            .html(function(d) {
+                return createString3(d);
     });
 
     
