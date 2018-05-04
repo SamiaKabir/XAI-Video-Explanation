@@ -44,13 +44,13 @@ d3.select("#video_selector").on("input", function () {
 });
 
 //to load the video specific data,questions and answers
-
+var flag=0;
 function load_question(vid){
     var x = document.getElementById("mySelect");
     var time=[];
     var explanations=[];
     var associations = [];
-    var flag=0;
+
     var button= d3.select("#button1");
 
     // CLICK TO SEE THE RESULTS OF THE QUESTIONS AS WELL AS THE EXPLANATIONS
