@@ -29,7 +29,7 @@
     console.log(file.name);
 
     // function ExplanationFromfile(data){   
-    loadData(file.name); 
+    // loadData(file.name); 
     load_question(file.name);
     // }
     // d3.json('assets/data/Video.json', ExplanationFromfile);
@@ -38,6 +38,13 @@
   inputNode.addEventListener('change', playSelectedFile, false)
 
 })()
+
+d3.select("#video_selector").on("input", function () {
+    d3.select("#mySelect").html("");
+    console.log("Select ro zad!");
+    console.log(d3.select("#mySelect").html(""));
+});
+
 
 //to load the video specific data,questions and answers
 
