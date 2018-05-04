@@ -37,6 +37,12 @@
 
 })()
 
+d3.select("#video_selector").on("input", function () {
+    d3.select("#mySelect").html("");
+    console.log("Select ro zad!");
+    console.log(d3.select("#mySelect").html(""));
+});
+
 //to load the video specific data,questions and answers
 
 function load_question(vid){

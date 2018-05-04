@@ -104,6 +104,10 @@ function loadCharts(associations) {
         var chartDiv = d3.select("#chart-div");
         var chartSvg = createChartSvg(chartDiv);
         var data = listOfData[i];
+
+        if (data == undefined)
+            continue;
+
         var tooltip = d3.select("body").append('div')
             .style('position', 'absolute ')
             .style('padding', '0 10px')
