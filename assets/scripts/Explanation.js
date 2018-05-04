@@ -30,7 +30,7 @@ function createString2 (explanation) {
 
 
 function createString3 (explanation) {
-    var string =  explanation.accuracy*100 +"%";
+    var string =  (explanation.accuracy*100).toFixed(2) +"%";
     console.log (string);
     return string;
 }
