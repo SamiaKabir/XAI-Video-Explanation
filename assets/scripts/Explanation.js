@@ -6,7 +6,7 @@ var listItems2;
 var listItems3;
 
 function createString (explanation) {
-    var string = "<mark style=\"background-color: rgba(126, 220, 220, 0.72);\"><b>"
+    var string = "<b>"
         + explanation.action;
 
     console.log (string);
@@ -14,7 +14,7 @@ function createString (explanation) {
 }
 
 function createString1 (explanation) {
-    var string = "<mark style=\"background-color: rgba(75, 0, 255, 0.22);\"><b>"
+    var string = "<b>"
         + explanation.object;
     console.log (string);
     return string;
@@ -22,7 +22,7 @@ function createString1 (explanation) {
 
 
 function createString2 (explanation) {
-    var string = "<mark style=\"background-color: rgba(240, 79, 183, 0.32);\"><b>"
+    var string = "<b>"
          + explanation.location;
     console.log (string);
     return string;

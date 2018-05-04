@@ -402,7 +402,7 @@ div#selection-panel-body {
 
 .explanation-options {
     margin: auto;
-    text-align: justify;
+    text-align: center;
     padding: 2px;
     vertical-align: baseline;
     font-size: 16px;
@@ -445,4 +445,19 @@ margin-left: 3%;
 
 .svg-style {
     background-color: rgba(66, 139, 202, 0.28);
+}
+
+#list{
+
+    background-color: rgba(126, 220, 220, 0.72);
+}
+
+#list1{
+
+  background-color: rgba(75, 0, 255, 0.22);
+}
+
+#list2{
+
+    background-color: rgba(240, 79, 183, 0.32);
 }
