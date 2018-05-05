@@ -39,12 +39,42 @@ function loadData(explanationsData, associationData)
     console.log(explanationsData);
     console.log(associationData);
 
+    var header=d3.select('#list').append("div")
+            .classed("explanation-options", true)
+            .html(function(d) {
+            var str="Acitvity";
+            return str;
+     });
+
+        d3.select('#list1').append("div")
+        .classed("explanation-options", true)
+        .html(function(d) {
+            var str="Object";
+            return str;
+     });
+
+            d3.select('#list2').append("div")
+            .classed("explanation-options", true)
+            .html(function(d) {
+            var str="Location";
+            return str;
+     });
+
+            d3.select('#list3').append("div")
+            .classed("explanation-options", true)
+            .html(function(d) {
+            var str="&nbsp; ";
+            return str;
+     });
+
     for (var j = 0; j <explanationsData.length; j++) {
         loadExplanation(explanationsData)
     }
     loadCharts(associationData);
 
 }
+
+
 
 //to show explanations in panel 2
 
@@ -53,6 +83,8 @@ function loadExplanation (data) {
 
     listItems = d3.select("#list").selectAll("a")
         .data(data).enter();
+
+
 
     listItems1 = d3.select("#list1").selectAll("a")
         .data(data).enter();
@@ -106,7 +138,9 @@ function loadExplanation (data) {
 function clear_list(flag){
 
     //listItems.remove();
-    d3.selectAll('.list-group-item').remove()
+    d3.selectAll('.list-group-item').remove();
+
+    d3.selectAll('.explanation-options').remove();
 
 }
 
