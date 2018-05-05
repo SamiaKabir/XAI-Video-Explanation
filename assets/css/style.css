@@ -446,3 +446,9 @@ margin-left: 3%;
 .svg-style {
     background-color: rgba(66, 139, 202, 0.28);
 }
+
+.chart-div {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+    color: white;
+}

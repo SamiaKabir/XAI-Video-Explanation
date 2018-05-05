@@ -7,7 +7,7 @@ function createString (explanation) {
         + explanation.object + "</b></mark> ; Location:  <mark style=\"background-color: rgba(240, 79, 183, 0.32);\"><b>"
         + explanation.location + "</b></mark>."
         + "<span class=\"pull-right text-muted medium\"><em> <b>"
-        + explanation.accuracy*100 + "%</b></em></span>";
+        + (explanation.accuracy*100).toFixed(2) + "%</b></em></span>";
     // console.log (string);
     return string;
 }

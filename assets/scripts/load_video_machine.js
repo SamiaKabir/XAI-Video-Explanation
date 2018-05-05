@@ -32,16 +32,25 @@
     load_question(file.name);
 
   }
-  var inputNode = document.querySelector('input')
+  var inputNode = document.querySelector('input');
   inputNode.addEventListener('change', playSelectedFile, false)
 
 })()
 
 d3.select("#video_selector").on("input", function () {
     d3.select("#mySelect").html("");
-    console.log("Select ro zad!");
-    console.log(d3.select("#mySelect").html(""));
+    d3.select("#chart-div-labels").html("");
+    d3.select("#chart-div").html("");
+    d3.select("#list").html("");
+    d3.select("#answer").html("");
 });
+
+d3.select("#mySelect").on("input", function () {
+    d3.select("#chart-div-labels").html("");
+    d3.select("#chart-div").html("");
+    d3.select("#list").html("");
+    d3.select("#answer").html("");
+})
 
 //to load the video specific data,questions and answers
 
@@ -61,7 +70,7 @@ function load_question(vid){
         console.log(x.options[x.selectedIndex].value);
         div.innerHTML=x.options[x.selectedIndex].value;
         change_video_time(time[x.selectedIndex]);
-
+        d3.select("#chart-div-labels").html("");
         //to clear the previous list if any
         if(flag>0) {
             clear_list(flag);
@@ -119,10 +128,6 @@ function load_question(vid){
           }
         }
       }
-      console.log ("Heloo ***********");
-      console.log (associations);
-      console.log(explanations)
-
     });
 }
 
