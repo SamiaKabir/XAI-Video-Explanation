@@ -41,9 +41,13 @@
 
 d3.select("#video_selector").on("input", function () {
     d3.select("#mySelect").html("");
-    console.log("Select ro zad!");
-    console.log(d3.select("#mySelect").html(""));
+    d3.select("#answer").html("");
 });
+
+d3.select("#mySelect").on("input", function () {
+    d3.select("#answer").html("")
+
+})
 
 
 //to load the video specific data,questions and answers

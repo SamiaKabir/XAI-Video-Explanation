@@ -42,12 +42,16 @@ d3.select("#video_selector").on("input", function () {
     d3.select("#chart-div-labels").html("");
     d3.select("#chart-div").html("");
     d3.select("#answer").html("");
+    d3.selectAll('.list-group-item').remove();
+    d3.selectAll('.explanation-options').remove();
 });
 
 d3.select("#mySelect").on("input", function () {
     d3.select("#chart-div-labels").html("");
     d3.select("#chart-div").html("");
-    d3.select("#answer").html("");
+    d3.select("#answer").html("")
+    d3.selectAll('.list-group-item').remove();
+    d3.selectAll('.explanation-options').remove();
 })
 
 //to load the video specific data,questions and answers
