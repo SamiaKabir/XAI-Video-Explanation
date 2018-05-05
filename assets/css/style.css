@@ -1,14 +1,9 @@
-
 /*Copyright  2013-2014 Iron Summit Media Strategies
-
     URI: http://http://www.ironsummitmedia.com/
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-
     http://www.apache.org/licenses/LICENSE-2.0
-
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -21,10 +16,10 @@ limitations under the License.*/
 
 /* ------------------------------- */
 
- body {
+body {
     background-color: #d2d4d9;
-     /*overflow-y: hidden;*/
-     height: 100%;
+    /*overflow-y: hidden;*/
+    height: 100%;
 }
 
 html {
@@ -34,22 +29,22 @@ html {
 
 /* ------------------------------- */
 
- #wrapper {
+#wrapper {
     width: 100%;
     margin-top: 20px!important;
-    background-color:#04B173; 
+    background-color:#04B173;
 }
 
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
     width: 100%;
-     background-color:rgb(209, 212, 216);
+    background-color:rgb(209, 212, 216);
 }
 
 
 
-    
+
 
 .navbar-static-side ul li {
     border-bottom:1px solid #84B899 !important;
@@ -61,7 +56,7 @@ html {
 
 /* Top Right Navigation Dropdown Styles */
 
- .navbar-top-links li {
+.navbar-top-links li {
     display: inline-block;
 }
 
@@ -100,7 +95,7 @@ html {
 
 /* Sidebar Menu Styles */
 
- .sidebar-search {
+.sidebar-search {
     padding: 15px;
 }
 
@@ -147,7 +142,7 @@ html {
 
 /* ------------------------------- */
 
- .btn-outline {
+.btn-outline {
     color: inherit;
     background-color: transparent;
     transition: all .5s;
@@ -187,7 +182,7 @@ html {
 
 /* Dashboard Chat */
 
- .chat {
+.chat {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -237,7 +232,7 @@ li#selected-image {
 
 /* Login Page */
 
- .login-panel {
+.login-panel {
     margin-top: 15%;
 }
 .body-Backcolor {
@@ -249,7 +244,7 @@ li#selected-image {
 
 /* Flot Chart Containers */
 
- .flot-chart {
+.flot-chart {
     display: block;
     height: 400px;
 }
@@ -261,7 +256,7 @@ li#selected-image {
 
 /* DataTables Overrides */
 
- table.dataTable thead .sorting,
+table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc:after,
 table.dataTable thead .sorting_desc,
 table.dataTable thead .sorting_asc_disabled,
@@ -290,7 +285,7 @@ table.dataTable thead .sorting:after {
 
 /* Circle Buttons */
 
- .btn-circle {
+.btn-circle {
     width: 30px;
     height: 30px;
     padding: 6px 0;
@@ -335,10 +330,10 @@ table.dataTable thead .sorting:after {
 
 
 canvas, img {
-  margin-top: auto;
-  margin-bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
 
 }
 #video {
@@ -402,7 +397,7 @@ div#selection-panel-body {
 
 .explanation-options {
     margin: auto;
-    text-align: justify;
+    text-align: center;
     padding: 2px;
     vertical-align: baseline;
     font-size: 16px;
@@ -423,10 +418,10 @@ div#selection-panel-body {
 
 
 #mySelect{
-width: 90%;
-height:35px;
-font-size: 20px;
-margin-left: 3%;
+    width: 90%;
+    height:35px;
+    font-size: 20px;
+    margin-left: 3%;
 }
 
 #video_selector{
@@ -441,6 +436,25 @@ margin-left: 3%;
     margin-top:3%;
     font-style: bold;
     color:"#000066";
+}
+
+.svg-style {
+    background-color: rgba(66, 139, 202, 0.28);
+}
+
+#list{
+
+    background-color: rgba(126, 220, 220, 0.72);
+}
+
+#list1{
+
+    background-color: rgba(75, 0, 255, 0.22);
+}
+
+#list2{
+
+    background-color: rgba(240, 79, 183, 0.32);
 }
 
 .svg-style {
