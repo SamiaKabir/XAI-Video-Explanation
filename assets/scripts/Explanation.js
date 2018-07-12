@@ -28,49 +28,51 @@ function createString2 (explanation) {
 
 
 function createString3 (explanation) {
-    var string =  (explanation.accuracy*100).toFixed(2) +"%";
-    console.log (string);
-    return string;
+    // var string =  (explanation.accuracy*100).toFixed(2) +"%";
+    // console.log (string);
+    // return string;
+    return explanation.accuracy;
 }
 
 // To load explanation data from json files
-function loadData(explanationsData, associationData)
+function loadData(explanationsData, associationData, )
 {
     console.log(explanationsData);
     console.log(associationData);
 
     var header=d3.select('#list').append("div")
-            .classed("explanation-options", true)
+            .classed("explanation-options vertical-align-center", true)
             .html(function(d) {
-            var str="Acitvity";
-            return str;
-     });
+                var str="Acitvity";
+                return str;
+             });
 
         d3.select('#list1').append("div")
-        .classed("explanation-options", true)
+        .classed("explanation-options vertical-align-center", true)
         .html(function(d) {
             var str="Object";
             return str;
      });
 
             d3.select('#list2').append("div")
-            .classed("explanation-options", true)
+            .classed("explanation-options vertical-align-center", true)
             .html(function(d) {
             var str="Location";
             return str;
      });
 
             d3.select('#list3').append("div")
-            .classed("explanation-options", true)
+            .classed("explanation-options vertical-align-center", true)
             .html(function(d) {
-            var str="&nbsp; ";
+            var str="Rank";
             return str;
      });
 
     for (var j = 0; j <explanationsData.length; j++) {
         loadExplanation(explanationsData)
     }
-    loadCharts(associationData);
+    loadCharts(associationData, "#850d2a");
+    loadChartsTemp(associationData, "#008185");
 
 }
 

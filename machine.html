@@ -14,125 +14,79 @@
 <body>
 <!--  wrapper -->
 <div id="wrapper">
-    <!--<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">-->
-    <!--<div class="navbar-header">-->
-    <!--<a class="navbar-brand" href="index.html">-->
-    <!--<img src="assets/data/images/logo1.png" alt="" />-->
-    <!--</a>-->
-    <!--</div>-->
-
-    <!--<div>-->
-    <!--<a class="navbar-brand" href="machine.html" style="float:right;">-->
-    <!--<img src="assets/data/images/logo2.png" alt="" />-->
-    <!--</a>-->
-    <!--</div>-->
-    <!--</nav>-->
-    <!--  page-wrapper -->
     <div id="page-wrapper">
-
-        <!--<div class="row">-->
-        <!--&lt;!&ndash; Welcome &ndash;&gt;-->
-        <!--<div class="col-lg-12">-->
-        <!--<div class="alert alert-info">-->
-        <!--<i class="fa fa-bar-chart-o" aria-hidden="true"></i><b>&nbsp;Hi! </b>And welcome to <b>Visualization Dashboard!</b>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;end  Welcome &ndash;&gt;-->
-        <!--</div>-->
 
         <div class="row">
             <div class="col-lg-7">
-
                 <!--Video Area -->
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h style="font-size: medium;font-style: oblique;"><b>Video Section</b></h>
-                        <!-- <div id="video-dropdown" class="pull-right"></div> -->
-
-                    </div>
-
                     <div id="video-panel" class="panel-body">
                         <div id="message"></div>
                         <input type="file" id="video_selector" accept="video/*"/>
                         <video id='video' controls></video>
                         <canvas id='video-overlay'></canvas>
 
-
-
-                        <div id="sel" class="selection-panel">
-                            <!-- Video Selection Area-->
-                            <!-- question -->
-                            <div class="chat-panel panel panel-primary" style="height:300px;">
-                                <div class="panel-heading">
-                                    <h style="font-size: medium;font-style: oblique;"><b>Question</b></h>
-                                </div>
-                                <div >
-                                    <div >
-                                        <h><b>Ask a question below and the model will provide a best guessed answer!</b></h>
-                                        <div class="input-group" style="width:100%">
-                                            <select id="mySelect" size="1"> </select>
-                                            <br> <br>
-                                            <!-- <span class="input-group-btn"> -->
-                                            <button class="btn btn-success" id="button1" type="button" style="margin-left:25%;">Submit Question</button>
-                                            <!-- </span> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- answer -->
-                            <div class="chat-panel panel panel-primary">
-                                <div class="panel-heading">
-                                    <h style="font-size: medium;font-style: oblique;"><b>Machine Generated Answer</b></h>
-                                </div>
-
-                                <!-- To show the answer of the questions being asked -->
-                                <div id="answer">
-
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
-
                 </div>
                 <!--End Video Area -->
 
+                <!--Answer Area-->
+                <div class="panel panel-primary">
+                    <div id="panel-body-question" class="panel-body">
+                        <div id="answer-panel-title" class="col-md-3">
+                            <div class="vertical-align-center" style="min-height: 52.1px; justify-content: center">
+                                <h class="header">
+                                    Query
+                                </h>
+                            </div>
+                            <div class="vertical-align-center" style="min-height: 52.1px; justify-content: center">
+                                <h class="header">
+                                    System's Answer
+                                </h>
+                            </div>
+                        </div>
+                        <div id="sel" class="col-md-9">
+                            <div class="row" >
+                                <div class="input-group col-md-12">
+                                    <select id="mySelect" class="col-md-12"> </select>
+                                    <!--<button class="btn btn-success col-md-3" id="button1" type="button">Submit Question</button>-->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="answer" class="well vertical-align-center"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-5">
+                <!--End Answer Area-->
+            <div class="col-lg-5" id="explanation-div">
 
                 <!-- Explanation Panel-->
                 <div class="panel panel-primary" id="explanation-box">
                     <div class="panel-heading">
-                        <h style="font-size: medium;font-style: oblique;"><b>Detected Combinations of Components</b></h>
+                        <h class="header"><b>Detected Combinations of Components</b></h>
                     </div>
 
                     <div class="panel-body">
                         <table class="col-md-12">
-                            <td style="width:20%;text-align: center;">
-                                <div class="list-group" id="list">
-                                    <!-- <strong style="font-size: medium;"><b>Activity</b></strong> -->
-                                    <!-- <small class="pull-right" style="vertical-align: bottom"><b>Approximation</b></small> -->
-                                </div>
-                            </td>
-                            <td style="width:30%;text-align: center;">
-                                <div class="list-group" id="list1">
-                                    <!-- <strong style="font-size: medium"><b>Object</b></strong> -->
-                                    <!-- <small class="pull-right" style="vertical-align: bottom"><b>Approximation</b></small> -->
-                                </div>
-                            </td>
-
-                            <td style="width:30%;text-align: center;">
-                                <div class="list-group" id="list2">
-                                    <!-- <strong style="font-size: medium"><b>Location</b></strong> -->
-                                    <!-- <small class="pull-right" style="vertical-align: bottom"><b>Approximation</b></small> -->
-                                </div>
-                            </td>
-
-                            <td style="width:20%;text-align: center;">
+                            <td class="table-col">
                                 <div class="list-group" id="list3" >
-                                    <!-- <strong style="font-size: medium"><b>&nbsp;</b></strong> -->
-                                    <!-- <small class="pull-right" style="vertical-align: bottom"><b>Approximation</b></small> -->
+
+                                </div>
+                            </td>
+                            <td class="table-col">
+                                <div class="list-group list" id="list">
+                                </div>
+                            </td>
+                            <td class="table-col">
+                                <div class="list-group list" id="list1">
+                                </div>
+                            </td>
+
+                            <td class="table-col">
+                                <div class="list-group list" id="list2">
                                 </div>
                             </td>
                         </table>
@@ -142,33 +96,29 @@
                 <!--End Explanation Panel-->
 
 
-                <div class="panel panel-primary">
+                <div class="panel panel-primary" id="component-score-div">
                     <div class="panel-heading">
-                        <h style="font-size: medium;font-style: oblique;"><b>Component Score</b></h>
+                        <h class="header"><b>Component Score</b></h>
                     </div>
 
-                    <div class="panel-body" style="height: 214px;">
-                        <div class="list-group" id="chart-div-labels"></div>
-                        <div class="list-group" id="chart-div"></div>
+                    <div class="panel-body">
+                        <!--<div class="list-group" id="chart-div-labels"></div>-->
+                        <!--<div class="list-group" id="chart-div"></div>-->
+                        <div class="col-md-6 component-header vertical-align-center component" style="justify-content: left">
+                            <h class="component"> Based on answer and input video </h>
+                        </div>
+                        <div class="col-md-6 component-header vertical-align-center component" style="justify-content: left">
+                            <h class="component"> Based on input video </h>
+                        </div>
+                        <div class="col-md-6 component-score" id="marginal-score"></div>
+                        <div class="col-md-6 component-score" id="unconditional-score"></div>
+                        <!--<div class="col-md-6"></div>-->
                     </div>
 
                 </div>
             </div>
         </div>
-        <!--             <div class="row">
-                        <div class="col-lg-6">
-                            <h><b>Ask a question below and the model will provide a best guessed answer!</b></h>
-                            <div class="input-group">
-                                 <select id="mySelect" size="1"> </select>
-                              <span class="input-group-btn">
-                                <button class="btn btn-success" id="button1" type="button">Submit Question</button>
-                              </span>
-                            </div>
-                        </div>
-                    </div> -->
     </div>
-    <!-- end page-wrapper -->
-
 </div>
 <!-- end wrapper -->
 
