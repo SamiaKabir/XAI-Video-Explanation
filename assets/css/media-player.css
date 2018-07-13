@@ -8,15 +8,17 @@ h1 {
 
 #media-player {
 	float:left;
-	padding:1em 1em .5em;
+	/*padding:1em 1em .5em;*/
 	background-color:#d6e0e4;
 	width:70%;
-	border:1px solid #2e52a4;
+	/*border:1px solid #2e52a4;*/
 	height: 70%;
+	margin-left:10%;
 }
 #media-controls{
 
 	width:100%;
+	height:30%;
 }
 
 
@@ -66,6 +68,7 @@ button {
 	/*background-image: url('play.png'); */
 	/*background:transparent url('buttons.png') no-repeat 0 0;*/
 	background:transparent;
+	font-size: 20px;
 }
 
 button:focus {outline:0;}
@@ -96,8 +99,8 @@ button:focus {outline:0;}
 }
 */
 #allButton{
-margin-top: 1.5px;
-height:16px;
+margin-top: 8%;
+height:40px;
 
 }
 
@@ -128,10 +131,10 @@ margin-top: 0px;
 	color:#fff;
 	font-size:12px;
 	/*width:300px;*/
-	height:6px;
+	height:8px;
 	border:none;
 	/*margin-right:5px;*/
-	/*margin-top:1px;*/
+	margin-top:2%;
 	background:#777;
 	cursor:pointer;
 	/*position: relative;*/
@@ -141,18 +144,18 @@ margin-top: 0px;
 #showTime{
 
   width:27px;
-  height:16px;
-  font-size: 10px;
+  height:40px;
+  font-size: 20px;
   color: #0b6d93;
   margin-top: 10%;
-  margin-left: 20%;
+  /*margin-left: 2%;*/
   margin-right: 10%;
   /*float:right;*/
 }
 
 #segment{
 	width:100%;
-	height:20px;
+	height:50px;
 }
 
 #media-play-list {

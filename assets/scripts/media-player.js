@@ -212,10 +212,10 @@ function segment_buttons(){
  var elmnt = document.getElementById("progress-bar");
  var w= elmnt.offsetWidth;
  // var w=300;
- var h= 36;
+ var h= 50;
 
- var start=[0.15,0.80,0.50];
- var end=[0.25,0.99,0.70];
+ var start=[0.15,0.60];
+ var end=[0.40,0.99];
  var data=[];
  var position=[];
  var mPlayer = document.getElementById("media-video");
@@ -279,7 +279,7 @@ for(var i=0;i<start.length;i++){
                                     .attr("class","button")
                                     .style("cursor","pointer")
                                     .on("click",function(d,i) {
-                                    	d3.selectAll('image').attr("width","12").attr("height","12");
+                                    	d3.selectAll('image').attr("width","16").attr("height","16");
                                         updateButtonColors(d3.select(this), d3.select(this.parentNode));
                                         change_segment(d.start,d.end);
                                         // d3.select("#numberToggle").text(i+1)
@@ -305,7 +305,7 @@ for(var i=0;i<start.length;i++){
 
 
             var bWidth= 20; //button width
-            var bHeight= 15; //button height
+            var bHeight= 25; //button height
             var bSpace= 10; //space between buttons
             var x0= 20; //x offset
             var y0= 0; //y offset
@@ -325,14 +325,14 @@ for(var i=0;i<start.length;i++){
             var lock_buttons=svg.selectAll('image').data(data).enter().append('image')
                                 .attr("xlink:href", "assets/replay.png")
                                 .attr("x", function(d) {return d.pos+(d.width/2)-4;})
-                                .attr("y", "14")
-                                .attr("width", "12")
-                                .attr("height", "12")
+                                .attr("y", "25")
+                                .attr("width", "16")
+                                .attr("height", "16")
                                 .on("click",function(d) {
                                 
-                                if(d3.select(this).attr("width")!=16){
+                                if(d3.select(this).attr("width")!=20){
                                 d3.selectAll('rect').attr("fill",defaultColor);
-                                d3.select(this).attr("width","16").attr("height","16").attr("opacity",1);
+                                d3.select(this).attr("width","20").attr("height","20").attr("opacity",1);
                       
                                 // for(var i=0;i<3;i++)
                                     {                               
@@ -346,7 +346,7 @@ for(var i=0;i<start.length;i++){
                                 else
                                 {
                                 	flag=0;
-                                	d3.select(this).attr("width","12").attr("height","12");
+                                	d3.select(this).attr("width","16").attr("height","16");
 
 
                                 }
