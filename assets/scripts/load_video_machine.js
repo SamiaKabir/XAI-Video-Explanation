@@ -62,7 +62,7 @@ function load_question(vid){
         var div= document.getElementById("answer");
         // console.log(x.options[x.selectedIndex].value);
         div.innerHTML=x.options[x.selectedIndex].value;
-        change_video_time(time[x.selectedIndex]);
+        // change_video_time(time[x.selectedIndex]);
         d3.select("#chart-div-labels").html("");
         //to clear the previous list if any
         if(flag>0) {
@@ -126,13 +126,13 @@ function load_question(vid){
     });
 }
 
-function change_video_time(time)
-{
+// function change_video_time(time)
+// {
                  
 
-var vid=document.getElementById("video");
-console.log(video.currentTime);
+// var vid=document.getElementById("video");
+// console.log(video.currentTime);
 
-video.currentTime=time*100;
+// video.currentTime=time*100;
 
-}
+// }

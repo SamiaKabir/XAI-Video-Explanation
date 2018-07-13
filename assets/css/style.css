@@ -340,10 +340,9 @@ canvas, img {
     margin-left: auto;
 
 }
-#video {
+/*#video {
     height: 467.6px;
     width: 100%;
-    /*width: 60%;*/
     float: left;
     position: relative;
     border: solid #428bca;
@@ -351,7 +350,7 @@ canvas, img {
     border-radius: 3px;
     background-color: #b3b3b3;
     margin-bottom: 10px;
-}
+}*/
 
 #video_selector {
     margin-bottom: 10px;
