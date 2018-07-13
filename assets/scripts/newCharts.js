@@ -159,7 +159,7 @@
 //         createBarChart(data, chartSvg, xScale, yScale, colors, tooltip, newHeight);
 //     }
 // }
-var maxWidth = 50, height = "7px"
+var maxWidth = 80, height = "10px"
 function loadCharts (associations, color) {
     d3.select("#marginal-score").html("");
     var listOfData = [];

@@ -357,7 +357,7 @@ canvas, img {
     font-weight: bold;
     font-size: medium;
     font-style: oblique;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
 }
 
 #video-overlay {
@@ -415,9 +415,9 @@ div#selection-panel-body {
     text-align: center;
     padding: 2px;
     /*vertical-align: baseline;*/
-    /*font-size: 14.5px;*/
+    font-size: 22px;
     font-weight: bold;
-    font-size: medium;
+    /*font-size: medium;*/
     font-style: oblique;
     min-height: 35px;
     justify-content: center;

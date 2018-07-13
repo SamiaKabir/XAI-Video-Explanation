@@ -45,28 +45,32 @@ function loadData(explanationsData, associationData, )
             .html(function(d) {
                 var str="Acitvity";
                 return str;
-             });
+             })
+        .style("font-size","medium");
 
         d3.select('#list1').append("div")
         .classed("explanation-options vertical-align-center", true)
         .html(function(d) {
             var str="Object";
             return str;
-     });
+        })
+        .style("font-size","medium");
 
-            d3.select('#list2').append("div")
-            .classed("explanation-options vertical-align-center", true)
-            .html(function(d) {
+        d3.select('#list2').append("div")
+        .classed("explanation-options vertical-align-center", true)
+        .html(function(d) {
             var str="Location";
             return str;
-     });
+        })
+        .style("font-size","medium");
 
-            d3.select('#list3').append("div")
-            .classed("explanation-options vertical-align-center", true)
-            .html(function(d) {
+        d3.select('#list3').append("div")
+        .classed("explanation-options vertical-align-center", true)
+        .html(function(d) {
             var str="Rank";
             return str;
-     });
+        })
+        .style("font-size","medium");
 
     for (var j = 0; j <explanationsData.length; j++) {
         loadExplanation(explanationsData)
