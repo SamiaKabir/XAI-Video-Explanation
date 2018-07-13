@@ -357,7 +357,7 @@ canvas, img {
     font-weight: bold;
     font-size: medium;
     font-style: oblique;
-    margin-left: 10%;
+    margin-left: 9%;
 }
 
 #video-overlay {
@@ -377,7 +377,7 @@ canvas, img {
     height: inherit;
     overflow: auto;
     min-height: 701px;
-    background-color: #d6e0e4;
+    background-color: white;
 }
 
 .selection-panel {
