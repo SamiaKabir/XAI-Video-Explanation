@@ -72,11 +72,13 @@ function changePos(event) {
 video= document.getElementById('media-video');
 var X=event.clientX;
 var Y=event.clientY;
-console.log(Y);
-var left=document.getElementById('progress-bar').offsetLeft;
-var P_left=document.getElementById('progress-bar').offsetParent.offsetLeft;
+console.log(X);
+var left=document.getElementById('dynamic').offsetLeft;
+console.log(left);
+var P_left=document.getElementById('dynamic').offsetParent.offsetLeft;
+console.log(P_left);
 var width=document.getElementById('progress-bar').offsetWidth;
-var pos = (X+1 -(left)) / width;
+var pos = (X+2 -(left+P_left)) / width;
 video.currentTime = (pos*video.duration);
 
 
@@ -215,7 +217,7 @@ function segment_buttons(){
  var h= 50;
 
  var start=[0.15,0.60];
- var end=[0.40,0.99];
+ var end=[0.40,1.09];
  var data=[];
  var position=[];
  var mPlayer = document.getElementById("media-video");
@@ -381,14 +383,16 @@ var t4=0;
 var t=0;
 var timer_return_value=false;
 var vid=document.getElementById("media-video");
-console.log(vid.currentTime);
-console.log(time);
-console.log(end);
+// console.log(vid.currentTime);
+// console.log(time);
+// console.log(end);
 
 t1=(time-Math.floor(time))*100;
 t2=Math.floor(time)*60;
 t2=t2+t1;
 
+console.log(vid.currentTime);
+console.log(time);
 console.log(t2);
 
 if(time<1)
@@ -409,9 +413,13 @@ t=d3.timer(timeOut);
 
  function timeOut(){
 
-  t3=(end-Math.floor(end))*100;
-  t4=Math.floor(end)*60;
-  t4=t3+t4;
+  // t3=(end-Math.floor(end))*100;
+  // t4=Math.floor(end)*60;
+  // t4=t3+t4;
+   t4=end*100;
+  console.log(vid.currentTime);
+  console.log(end);
+  console.log(t4);
 
   // var time_temp=vid.currentTime;
 
@@ -465,9 +473,10 @@ t=d3.timer(timeOut);
 
   // d3.timerFlush();
 
-  t3=(end-Math.floor(end))*100;
-  t4=Math.floor(end)*60;
-  t4=t3+t4;
+  // t3=(end-Math.floor(end))*100;
+  // t4=Math.floor(end)*60;
+  // t4=t3+t4;
+   t4=end*100;
 
   // var time_temp=vid.currentTime;
    
