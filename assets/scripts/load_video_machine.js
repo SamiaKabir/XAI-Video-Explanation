@@ -139,7 +139,7 @@ function load_question(vid){
                  end.push(data[i].listOfQuestions[j].listOfKeyFrames[f].endTime)
 
                explanations.push(temp2);
-               associations.push(currentQuestion.listOfKeyFrames.associatedFeatures);
+               associations.push(currentQuestion.listOfKeyFrames[f].associatedFeatures);
 
           }
 

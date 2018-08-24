@@ -35,7 +35,7 @@ function createString3 (explanation) {
 }
 
 // To load explanation data from json files
-function loadData(explanationsData, associationData, )
+function loadData(explanationsData, associationData)
 {
     console.log(explanationsData);
     console.log(associationData);
