@@ -65,19 +65,24 @@ function load_question(vid){
         // console.log(x.options[x.selectedIndex].value);
         div.innerHTML=x.options[x.selectedIndex].value;
         // change_video_time(time[x.selectedIndex]);
+        console.log(all_start)
+
+        segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex]);
         d3.select("#chart-div-labels").html("");
         //to clear the previous list if any
         if(flag>0) {
             clear_list(flag);
             loadData(explanations[x.selectedIndex], associations[x.selectedIndex]);
-            segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex]);
+
 
         }
         else {
             loadData(explanations[x.selectedIndex], associations[x.selectedIndex]);
-            segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex]);
+
         }
         flag++;
+
+
     });
 
     var questions;
@@ -128,17 +133,18 @@ function load_question(vid){
 
                  temp2.push(temp);
 
+               }
+
                  start.push(data[i].listOfQuestions[j].listOfKeyFrames[f].startTime);
                  end.push(data[i].listOfQuestions[j].listOfKeyFrames[f].endTime)
 
-
-               }
-
                explanations.push(temp2);
                associations.push(currentQuestion.listOfKeyFrames.associatedFeatures);
+
+          }
+
                all_start.push(start);
                all_end.push(end);
-          }
 
   
         }
