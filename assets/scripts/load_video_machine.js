@@ -50,6 +50,8 @@ function load_question(vid){
     var time=[];
     var explanations=[];
     var associations = [];
+    var all_start=[];
+    var all_end=[];
 
     // var button= d3.select("#button1");
     var querySelect = d3.select("#mySelect");
@@ -68,10 +70,12 @@ function load_question(vid){
         if(flag>0) {
             clear_list(flag);
             loadData(explanations[x.selectedIndex], associations[x.selectedIndex]);
+            segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex]);
 
         }
         else {
             loadData(explanations[x.selectedIndex], associations[x.selectedIndex]);
+            segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex]);
         }
         flag++;
     });
@@ -99,9 +103,17 @@ function load_question(vid){
                option.value= ans;
                x.add(option);
 
+               var len3=currentQuestion.listOfKeyFrames.length;
+
+               var start=[];
+               var end=[];
+
+               for(var f=0;f<len3;f++)
+              {
+
                time[j]=currentQuestion.listOfKeyFrames.startTime;
 
-               var len2=currentQuestion.listOfKeyFrames.textExplanations.length;
+               var len2=currentQuestion.listOfKeyFrames[f].textExplanations.length;
                var temp2=[];
                var listOfProbabilities = [];
                for(var k=0; k<len2;k++)
@@ -109,18 +121,28 @@ function load_question(vid){
                  var temp={};
 
                  // explanations data
-                 temp.action=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].activity;
-                 temp.object=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].object;
-                 temp.location=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].location;
-                 temp.accuracy=data[i].listOfQuestions[j].listOfKeyFrames.textExplanations[k].approximation;
+                 temp.action=data[i].listOfQuestions[j].listOfKeyFrames[f].textExplanations[k].activity;
+                 temp.object=data[i].listOfQuestions[j].listOfKeyFrames[f].textExplanations[k].object;
+                 temp.location=data[i].listOfQuestions[j].listOfKeyFrames[f].textExplanations[k].location;
+                 temp.accuracy=data[i].listOfQuestions[j].listOfKeyFrames[f].textExplanations[k].approximation;
 
                  temp2.push(temp);
+
+                 start.push(data[i].listOfQuestions[j].listOfKeyFrames[f].startTime);
+                 end.push(data[i].listOfQuestions[j].listOfKeyFrames[f].endTime)
+
 
                }
 
                explanations.push(temp2);
                associations.push(currentQuestion.listOfKeyFrames.associatedFeatures);
+               all_start.push(start);
+               all_end.push(end);
           }
+
+  
+        }
+ 
         }
       }
     });

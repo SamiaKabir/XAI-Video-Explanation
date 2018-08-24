@@ -48,7 +48,7 @@ function initialiseMediaPlayer() {
 	}, false);	
 	mediaPlayer.addEventListener('ended', function() { this.pause(); }, false);	
 
-	mediaPlayer.addEventListener('loadeddata',segment_buttons);
+	// mediaPlayer.addEventListener('loadeddata',segment_buttons);
 
 }
 
@@ -209,15 +209,15 @@ function resetPlayer() {
 
 
 
-function segment_buttons(){
+function segment_buttons(start,end){
 
  var elmnt = document.getElementById("progress-bar");
  var w= elmnt.offsetWidth;
  // var w=300;
  var h= 50;
 
- var start=[0.15,0.60];
- var end=[0.40,1.09];
+ // start=[33,78];
+ // end=[68,100];
  var data=[];
  var position=[];
  var mPlayer = document.getElementById("media-video");
@@ -234,10 +234,10 @@ for(var i=0;i<start.length;i++){
 	// var new_id = document.getElementById('newid'+i);
 	// console.log(new_id);
 	// var x=(end[i]-start[i])*5;
-    var percentage = Math.floor((100 / mPlayer.duration) * (start[i]*100));
+    var percentage = Math.floor((100 / mPlayer.duration) * (start[i]));
     position[i]=(percentage/100)*w;
     console.log(position[i]);
-    percentage = Math.floor((100 / mPlayer.duration) * (end[i]*100));
+    percentage = Math.floor((100 / mPlayer.duration) * (end[i]));
     temp=(percentage/100)*w;
     width=temp-position[i];
 
@@ -395,16 +395,17 @@ console.log(vid.currentTime);
 console.log(time);
 console.log(t2);
 
-if(time<1)
-{
-vid.currentTime=time*100;
+// if(time<1)
+// {
+// vid.currentTime=time*100;
 
-}
-else
-{
-  vid.currentTime=t2;
+// }
+// else
+// {
+//   vid.currentTime=t2;
 
-}
+// }
+vid.currentTime=time;
 
   // vid.play();
 vid.pause();
@@ -423,7 +424,7 @@ t=d3.timer(timeOut);
 
   // var time_temp=vid.currentTime;
 
-  if((vid.currentTime) >= t4){
+  if((vid.currentTime) >= end){
     vid.pause();  
     t.stop();
     timer_return_value=true;
@@ -454,16 +455,18 @@ t2=t2+t1;
 
 console.log(t2);
 
-if(time<1)
-{
-vid.currentTime=time*100;
+// if(time<1)
+// {
+// vid.currentTime=time*100;
 
-}
-else
-{
-  vid.currentTime=t2;
+// }
+// else
+// {
+//   vid.currentTime=t2;
  
-}
+// }
+
+vid.currentTime=time;
 
  // vid.play();
 vid.pause();
@@ -481,13 +484,13 @@ t=d3.timer(timeOut);
   // var time_temp=vid.currentTime;
    
    if(!flag) t.stop();
-  if((vid.currentTime) >= t4){
+  if((vid.currentTime) >= end){
 
     // vid.pause();  
     // t.stop();
     if(flag)
     {
-    vid.currentTime=t2;
+    vid.currentTime=time;
     // vid.play();
     // d3.timerFlush();
     t.restart(timeOut);
