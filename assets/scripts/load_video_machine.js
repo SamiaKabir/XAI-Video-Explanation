@@ -67,21 +67,8 @@ function load_question(vid){
         // change_video_time(time[x.selectedIndex]);
         console.log(all_start)
 
-        segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex]);
         d3.select("#chart-div-labels").html("");
-        //to clear the previous list if any
-        if(flag>0) {
-            clear_list(flag);
-            loadData(explanations[x.selectedIndex], associations[x.selectedIndex]);
-
-
-        }
-        else {
-            loadData(explanations[x.selectedIndex], associations[x.selectedIndex]);
-
-        }
-        flag++;
-
+        segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex],explanations[x.selectedIndex],associations[x.selectedIndex],flag);
 
     });
 

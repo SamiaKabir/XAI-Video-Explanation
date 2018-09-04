@@ -209,7 +209,7 @@ function resetPlayer() {
 
 
 
-function segment_buttons(start,end){
+function segment_buttons(start,end,explanations,associations,flag){
 
  var elmnt = document.getElementById("progress-bar");
  var w= elmnt.offsetWidth;
@@ -283,7 +283,7 @@ for(var i=0;i<start.length;i++){
                                     .on("click",function(d,i) {
                                     	d3.selectAll('image').attr("width","16").attr("height","16");
                                         updateButtonColors(d3.select(this), d3.select(this.parentNode));
-                                        change_segment(d.start,d.end);
+                                        change_segment(d.start,d.end,explanations,associations,flag);
                                         // d3.select("#numberToggle").text(i+1)
                                     })
                                     .on("mouseover", function() {
@@ -324,35 +324,35 @@ for(var i=0;i<start.length;i++){
                         .attr("fill",defaultColor);
                
 
-            var lock_buttons=svg.selectAll('image').data(data).enter().append('image')
-                                .attr("xlink:href", "assets/replay.png")
-                                .attr("x", function(d) {return d.pos+(d.width/2)-4;})
-                                .attr("y", "25")
-                                .attr("width", "16")
-                                .attr("height", "16")
-                                .on("click",function(d) {
+            // var lock_buttons=svg.selectAll('image').data(data).enter().append('image')
+            //                     .attr("xlink:href", "assets/replay.png")
+            //                     .attr("x", function(d) {return d.pos+(d.width/2)-4;})
+            //                     .attr("y", "25")
+            //                     .attr("width", "16")
+            //                     .attr("height", "16")
+            //                     .on("click",function(d) {
                                 
-                                if(d3.select(this).attr("width")!=20){
-                                d3.selectAll('rect').attr("fill",defaultColor);
-                                d3.select(this).attr("width","20").attr("height","20").attr("opacity",1);
+            //                     if(d3.select(this).attr("width")!=20){
+            //                     d3.selectAll('rect').attr("fill",defaultColor);
+            //                     d3.select(this).attr("width","20").attr("height","20").attr("opacity",1);
                       
-                                // for(var i=0;i<3;i++)
-                                    {                               
-                                       flag=1;
-                                       loop_segment(d.start,d.end);
+            //                     // for(var i=0;i<3;i++)
+            //                         {                               
+            //                            flag=1;
+            //                            loop_segment(d.start,d.end);
 
 
-                                    }
-                                }
+            //                         }
+            //                     }
 
-                                else
-                                {
-                                	flag=0;
-                                	d3.select(this).attr("width","16").attr("height","16");
+            //                     else
+            //                     {
+            //                     	flag=0;
+            //                     	d3.select(this).attr("width","16").attr("height","16");
 
 
-                                }
-                              });
+            //                     }
+            //                   });
 
 
             function updateButtonColors(button, parent) {
@@ -370,11 +370,14 @@ for(var i=0;i<start.length;i++){
                 button.select("rect")
                         .attr("fill",doubleColor)
             }
+
+
+
           
         
 }
 
-function change_segment(time,end){
+function change_segment(time,end,explanations,associations,flag){
 
 var t1=0;
 var t2=0;
@@ -434,6 +437,19 @@ t=d3.timer(timeOut);
 };
 
   // t.restart(timeOut);
+
+              // if(flag>0) {
+            clear_list(flag);
+            loadData(explanations, associations);
+
+
+        // }
+        // else {
+        //     loadData(explanations, associations);
+
+        // }
+        // flag++;
+
 }
 
 function loop_segment(time,end)

@@ -144,6 +144,7 @@ function loadExplanation (data) {
 function clear_list(flag){
 
     //listItems.remove();
+    // d3.selectAll('g.button').remove();
     d3.selectAll('.list-group-item').remove();
 
     d3.selectAll('.explanation-options').remove();
