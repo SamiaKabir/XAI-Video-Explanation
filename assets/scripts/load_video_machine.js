@@ -44,7 +44,7 @@ d3.select("#mySelect").on("input", function () {
 })
 
 //to load the video specific data,questions and answers
-var flag=0;
+var flag_que=0;
 function load_question(vid){
     var x = document.getElementById("mySelect");
     var time=[];
@@ -70,7 +70,15 @@ function load_question(vid){
         d3.select("#chart-div-labels").html("");
         console.log("jhbfj")
         console.log(explanations[x.selectedIndex])
-        segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex],explanations[x.selectedIndex],associations[x.selectedIndex],flag);
+        segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex],explanations[x.selectedIndex],associations[x.selectedIndex],flag_que);
+        
+        if(flag_que>0){
+
+        clear_list(flag_que);
+        clear_segment();
+      }
+
+      flag_que++;
 
     });
 

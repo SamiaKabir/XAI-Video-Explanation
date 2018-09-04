@@ -543,3 +543,9 @@ t=d3.timer(timeOut);
 //    div.innerHTML=(mediaPlayer.currentTime).toFixed(1)+"ms";
 //    updateProgressBar();
 // }
+
+function clear_segment(){
+
+d3.select('svg').remove();
+
+}
