@@ -283,7 +283,7 @@ for(var i=0;i<start.length;i++){
                                     .on("click",function(d,i) {
                                     	d3.selectAll('image').attr("width","16").attr("height","16");
                                         updateButtonColors(d3.select(this), d3.select(this.parentNode));
-                                        change_segment(d.start,d.end,explanations,associations,flag);
+                                        change_segment(d.start,d.end,explanations[i],associations[i],flag);
                                         // d3.select("#numberToggle").text(i+1)
                                     })
                                     .on("mouseover", function() {

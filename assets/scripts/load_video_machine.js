@@ -68,6 +68,8 @@ function load_question(vid){
         console.log(all_start)
 
         d3.select("#chart-div-labels").html("");
+        console.log("jhbfj")
+        console.log(explanations[x.selectedIndex])
         segment_buttons(all_start[x.selectedIndex],all_end[x.selectedIndex],explanations[x.selectedIndex],associations[x.selectedIndex],flag);
 
     });
@@ -84,6 +86,9 @@ function load_question(vid){
         {
            var len=data[i].listOfQuestions.length;
 
+           var exp=[];
+           var assc=[];
+
            for(var j=0;j<len;j++)
            {
                var currentQuestion=data[i].listOfQuestions[j];
@@ -99,6 +104,8 @@ function load_question(vid){
 
                var start=[];
                var end=[];
+               var temp3=[];
+               var temp4=[];
 
                for(var f=0;f<len3;f++)
               {
@@ -125,13 +132,15 @@ function load_question(vid){
                  start.push(data[i].listOfQuestions[j].listOfKeyFrames[f].startTime);
                  end.push(data[i].listOfQuestions[j].listOfKeyFrames[f].endTime)
 
-               explanations.push(temp2);
-               associations.push(currentQuestion.listOfKeyFrames[f].associatedFeatures);
+               temp3.push(temp2);
+               temp4.push(currentQuestion.listOfKeyFrames[f].associatedFeatures);
 
           }
 
                all_start.push(start);
                all_end.push(end);
+               explanations.push(temp3);
+               associations.push(temp4);
 
   
         }
